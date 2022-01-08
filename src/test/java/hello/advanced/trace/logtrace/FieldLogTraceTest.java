@@ -23,5 +23,13 @@ public class FieldLogTraceTest {
         trace.exception(status1, new IllegalStateException());
     }
 
+    @Test
+    void begin_exception_level3() {
+        TraceStatus status1 = trace.begin("hello1");
+        TraceStatus status2 = trace.begin("hello2");
+        trace.exception(status2, new IllegalStateException());
+        trace.exception(status1, new IllegalStateException());
+    }
+
 
 }
